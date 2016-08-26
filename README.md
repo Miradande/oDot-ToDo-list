@@ -1,2 +1,19 @@
 # oDot-ToDo-list
-A school project for testing tools for Javascript development
+
+##Description
+
+Test a few tools for JavaScript development.
+
+##The Case
+
+Basic To-Do list (Web based CRUD app)
+
+##Tools
+
+| Tool          | Used for        | Assigned to |
+| ------------- |:----------------| -----------:|
+| Git           | Version Control | Anders      |
+| Firebase      | Backend					| Anders			|
+| Gulp					| Task Runner			| Mirsad			|
+| Travis CI 		| CI, Deployment  | Adam				|
+| Tape					| Testing Tool 		| *						|
