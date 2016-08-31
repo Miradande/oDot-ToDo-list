@@ -1,0 +1,22 @@
+{
+  "name": "odot-todo-list",
+  "version": "0.1.0",
+  "description": "A oDot todo list",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamWendell/oDot-ToDo-list.git"
+  },
+  "author": "oakis AdamWendell CyrusZei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdamWendell/oDot-ToDo-list/issues"
+  },
+  "homepage": "https://github.com/AdamWendell/oDot-ToDo-list#readme",
+  "devDependencies": {
+    "tape": "^4.6.0"
+  }
+}

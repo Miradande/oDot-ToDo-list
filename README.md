@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/AdamWendell/oDot-ToDo-list.svg?branch=master)](https://travis-ci.org/AdamWendell/oDot-ToDo-list)
 # oDot-ToDo-list
 
 ##Description
