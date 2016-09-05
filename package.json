@@ -18,5 +18,8 @@
   "homepage": "https://github.com/AdamWendell/oDot-ToDo-list#readme",
   "devDependencies": {
     "tape": "^4.6.0"
+  },
+  "dependencies": {
+    "firebase": "^3.3.0"
   }
 }
