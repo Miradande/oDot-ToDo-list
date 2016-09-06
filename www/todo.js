@@ -13,10 +13,13 @@ todos = (state, action) => {
   switch (action.type) {
     case 'addTodo':
       return state.concat(action.todo)
-    case 'removeTodo':
-      return state.slice(0, action.index).concat(state.slice(action.index + 1))
+    case 'toggleDone':
+      state[action.index].done = !state[action.index].done
+      return state
     case 'logOut':
       return state = []
+    case 'login':
+      return state.concat(action.todos)
     default:
       return state
   }
@@ -50,7 +53,7 @@ todoStore.subscribe( () => {
   todoStore.getState().map( (e, i) => {
     var item = document.createElement('li')
     item.innerHTML = e
-    item.addEventListener('click', () => todoStore.dispatch({type: 'removeTodo', index: i}))
+    item.addEventListener('click', () => todoStore.dispatch({type: 'toggleDone', index: i}))
     list.appendChild(item)
   })
 })
