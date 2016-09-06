@@ -8,6 +8,15 @@ var gulp = require('gulp');
 var tape = require('gulp-tape');
 var tapColorize = require('tap-colorize');
 
+var clean = require('gulp-clean');
+
+
+var bases = {
+ app: 'app/',
+ dist: 'dist/',
+};
+
+
 
         // guide https://css-tricks.com/gulp-for-beginners/
         //to run this you type "gulp [taskname]" example "gulp hello"
@@ -17,6 +26,8 @@ gulp.task('hello', function(){
 
 
 
+
+// To run the test run "gulp test"
 gulp.task('test', function() {
   return gulp.src('test/*.js')
     .pipe(tape({
@@ -40,6 +51,21 @@ gulp.task('browserSync', function() {
       baseDir: 'www'
     }
   });
+});
+gulp.task('default', ['clean', 'dist']);
+
+
+
+gulp.task('clean', [], function() {
+  console.log("Clean all files in build folder");
+
+  return gulp.src("dist/*", { read: false }).pipe(clean());
+});
+
+
+gulp.task('dist', function(){
+  gulp.src('./www/*')
+  .pipe(gulp.dest('./dist/'));
 });
 
 
