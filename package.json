@@ -1,25 +1,28 @@
 {
-  "name": "odot-todo-list",
-  "version": "0.1.0",
-  "description": "A oDot todo list",
-  "main": "index.js",
-  "scripts": {
-    "test": "node test/*.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AdamWendell/oDot-ToDo-list.git"
-  },
-  "author": "oakis AdamWendell CyrusZei",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AdamWendell/oDot-ToDo-list/issues"
-  },
-  "homepage": "https://github.com/AdamWendell/oDot-ToDo-list#readme",
-  "devDependencies": {
-    "tape": "^4.6.0"
-  },
-  "dependencies": {
-    "firebase": "^3.3.0"
-  }
+    "name": "odot-todo-list",
+    "version": "0.1.0",
+    "description": "A oDot todo list",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test/*.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AdamWendell/oDot-ToDo-list.git"
+    },
+    "author": "oakis AdamWendell CyrusZei",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/AdamWendell/oDot-ToDo-list/issues"
+    },
+    "homepage": "https://github.com/AdamWendell/oDot-ToDo-list#readme",
+    "devDependencies": {
+        "browser-sync": "^2.14.3",
+        "gulp": "^3.9.1",
+        "gulp-sass": "^2.3.2",
+        "tape": "^4.6.0"
+    },
+    "dependencies": {
+        "firebase": "^3.3.0"
+    }
 }
