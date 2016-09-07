@@ -1,6 +1,11 @@
 before_script:
   - npm install;
-script: gulp test 
+  - npm i -g firebase-tools
+script:
+  - gulp test 
+  - gulp
+after_success:
+  - firebase deploy --email ${FIREBASE_USERNAME} --password ${FIREBASE_PASSWORD}
 language: node_js
 node_js:
   - "6"
