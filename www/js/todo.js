@@ -1,4 +1,4 @@
-exports.todos = (state, action) => {
+todos = (state, action) => {
 
   var state = (typeof state !== 'undefined' ? state : [])
   switch (action.type) {
@@ -16,7 +16,7 @@ exports.todos = (state, action) => {
   }
 }
 
-exports.store = (reducer) => {
+store = (reducer) => {
   var state
   var listeners = []
 
@@ -38,4 +38,6 @@ exports.store = (reducer) => {
 
   return {getState, dispatch, subscribe}
 }
-
+exports.store = store
+exports.todos = todos
+exports.todoStore = store(todos)
