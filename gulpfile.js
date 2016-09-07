@@ -123,6 +123,10 @@ gulp.task('watch', ['browserSync', 'sass'], function (){
   // Reloads the browser whenever HTML or JS files change
   gulp.watch('www/*.html', browserSync.reload);
   gulp.watch('www/js/**/*.js', browserSync.reload);
+
+  return gulp.src('./www/*.html')
+  .pipe(useref())
+  .pipe(gulp.dest('www'));
 });
 
 
