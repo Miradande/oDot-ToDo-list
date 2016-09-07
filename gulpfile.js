@@ -10,6 +10,8 @@ var tapColorize = require('tap-colorize');
 
 var clean = require('gulp-clean');
 
+var browserify = require('gulp-browserify');
+var uglify = require('gulp-uglify');
 
 var bases = {
  app: 'app/',
@@ -52,7 +54,7 @@ gulp.task('browserSync', function() {
     }
   });
 });
-gulp.task('default', ['clean', 'dist']);
+gulp.task('default', ['clean','dist', 'browserify']);
 
 
 
@@ -62,10 +64,33 @@ gulp.task('clean', [], function() {
   return gulp.src("dist/*", { read: false }).pipe(clean());
 });
 
+//browserify fix
+gulp.task('browserify', function () {
+  return gulp.src(['./www/js/*.js'])
+   .pipe(browserify())
+   //.pipe(uglify())
+   .pipe(gulp.dest('./dist/js/'));
+});
+
+
 
 gulp.task('dist', function(){
-  gulp.src('./www/*')
+
+  gulp.src('./www/css/*.css')
+  .pipe(gulp.dest('./dist/css/'));
+
+  gulp.src('./www/images/*.jpg')
+  .pipe(gulp.dest('./dist/images/'));
+
+  // gulp.src('./www/js/**/*.js')
+  // .pipe(gulp.dest('./dist/js/'));
+
+  // gulp.src('./www/scss/**/*.scss')
+  // .pipe(gulp.dest('./dist/scss/'));
+
+  gulp.src('./www/*.html')
   .pipe(gulp.dest('./dist/'));
+
 });
 
 
