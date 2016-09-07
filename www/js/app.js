@@ -2,14 +2,14 @@ var todoStore = require('./todo.js').todoStore;
 
 var userId = '';
 
-function createTodo (todoText) { 
+function createTodo (todoText) {
 
 	// Create new div element with todoText
-  var newTodo = document.createElement("div"); 
-  var newText = document.createTextNode(todoText); 
-  newTodo.appendChild(newText); 
+  var newTodo = document.createElement("div");
+  var newText = document.createTextNode(todoText);
+  newTodo.appendChild(newText);
 
-  // add the newly created element and its content into the DOM 
+  // add the newly created element and its content into the DOM
   var currentDiv = document.getElementById("todoList");
   var emptyDiv = document.getElementById('emptyTodo');
   currentDiv.insertBefore(newTodo, emptyDiv);
@@ -107,5 +107,3 @@ var database = firebase.database();
 //############//
 //##TODOPAGE##//
 //############//
-
-

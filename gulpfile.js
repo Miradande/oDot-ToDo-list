@@ -65,7 +65,7 @@ gulp.task('default', function(callback) {
   runSequence('clean',
     ['watch',
       'dist',
-      //'browserify'
+      'browserify'
     ],
     callback);
 });
@@ -81,7 +81,7 @@ gulp.task('clean', [], function() {
 //browserify fix
 gulp.task('browserify', function () {
 
-  return gulp.src(['./www/js/*.js'])
+  return gulp.src(['./www/js/app.js'])
    .pipe(browserify())
    //.pipe(uglify())
    .pipe(gulp.dest('./dist/js/'));
@@ -126,7 +126,8 @@ gulp.task('watch', ['browserSync', 'sass'], function (){
 
   return gulp.src('./www/*.html')
   .pipe(useref())
-  .pipe(gulp.dest('www'));
+  .pipe(gulp.dest('./dist/'));
+
 });
 
 
