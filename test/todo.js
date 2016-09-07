@@ -1,6 +1,6 @@
 var test = require('tape')
-var todos = require('../src/js/todo.js').todos
-var store = require('../src/js/todo.js').store(todos)
+var todos = require('../www/js/todo.js').todos
+var store = require('../www/js/todo.js').store(todos)
 console.log(store.dispatch)
 
 test('Adding ToDos', function (t) {
