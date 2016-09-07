@@ -1,22 +1,6 @@
 var todoStore = require('./todo.js').todoStore;
 
-var userId = '';
-
-function createTodo (todoText) { 
-
-	// Create new div element with todoText
-  var newTodo = document.createElement("div"); 
-  var newText = document.createTextNode(todoText); 
-  newTodo.appendChild(newText); 
-
-  // add the newly created element and its content into the DOM 
-  var currentDiv = document.getElementById("todoList");
-  var emptyDiv = document.getElementById('emptyTodo');
-  currentDiv.insertBefore(newTodo, emptyDiv);
-
-}
-
-
+var userIdRef = '';
 
 // Initialize Firebase
 var config = {
@@ -39,6 +23,8 @@ const btnSignUp = document.getElementById('btnSignUp');
 const btnLogout = document.getElementById('btnLogout');
 const loginPage = document.getElementById('loginPage');
 const todoPage = document.getElementById('todoPage');
+const todoText = document.getElementById('todoText');
+const addTodo = document.getElementById('addTodo');
 
 // Login
 btnLogin.addEventListener('click', e => {
@@ -67,7 +53,6 @@ btnSignUp.addEventListener('click', e => {
   promise
     .catch(e => console.log(e.message))
     .then(data => {
-      createFirstList(data.uid);
       console.log(data.uid);
     });
 });
@@ -84,14 +69,16 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   if(firebaseUser) {
     console.log(firebaseUser.email+' is logged in');
     console.log(firebaseUser.uid + 'this is userId');
-    userId = firebaseUser.uid;
-    console.log(userId)
+    userIdRef = database.ref('todos/' + firebaseUser.uid);
+    userIdRef.once('value').then((s) => todoStore.dispatch({type: 'login', todos: s.val()}))
+    databaseListener = todoStore.subscribe(() => userIdRef.set(todoStore.getState()))
     todoPage.classList.remove('hidden');
     loginPage.classList.add('hidden');
   } else {
     console.log('Not logged in');
-    userId = '';
-    console.log(userId);
+    databaseListener();
+    userIdRef = '';
+    todoStore.dispatch({type: 'logOut'})
     todoPage.classList.add('hidden');
     loginPage.classList.remove('hidden');
   }
@@ -102,10 +89,34 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 //############//
 
 var database = firebase.database();
-
+var databaseListener;
 
 //############//
 //##TODOPAGE##//
 //############//
+todoStore.subscribe( () => {
+  var doneList = document.getElementById('done')
+  var notDoneList = document.getElementById('notDone')
+  doneList.innerHTML = ''
+  notDoneList.innerHTML = ''
+  todoStore.getState().map((todoObj, i) => {
+    if(todoObj) {
+      var newLi = document.createElement('li')
+      newLi.innerHTML = todoObj.task
+      newLi.addEventListener('click', e => todoStore.dispatch(
+  {type:'toggleDone', index: i})
+      )
+    if (todoObj.done) {
+        doneList.appendChild(newLi)
+      } else {
+        notDoneList.appendChild(newLi)
+      }
+    } else { return null}
+    })
+})
 
-
+addTodo.addEventListener('click', e => {
+  var text = todoText.value;
+  todoStore.dispatch({type: 'addTodo', todo: {task: text, done: false}});
+  todoText.value = '';
+})
