@@ -61,7 +61,7 @@ gulp.task('browserSync', function() {
 
 gulp.task('default', function(callback) {
   runSequence('clean',
-    ['dist', 'browserify'],
+    ['watch','dist', 'browserify'],
     callback);
 });
 
@@ -75,6 +75,7 @@ gulp.task('clean', [], function() {
 
 //browserify fix
 gulp.task('browserify', function () {
+
   return gulp.src(['./www/js/*.js'])
    .pipe(browserify())
    //.pipe(uglify())
