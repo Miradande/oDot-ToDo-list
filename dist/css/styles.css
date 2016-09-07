@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 body {
   background-color: #FFFFFF; }
 
 p {
   font-size: 20; }
+=======
+.hidden {
+	display: none;
+}
+>>>>>>> upstream/master
