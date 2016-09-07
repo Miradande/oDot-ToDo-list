@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/AdamWendell/oDot-ToDo-list#readme",
   "devDependencies": {
+    "browser-sync": "^2.14.3",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-tape": "0.0.9",
+    "tap-colorize": "^1.2.0",
     "tape": "^4.6.0"
   },
   "dependencies": {
