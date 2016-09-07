@@ -15,6 +15,8 @@ var uglify = require('gulp-uglify');
 
 var runSequence = require('run-sequence');
 
+var useref = require('gulp-useref');
+
 var bases = {
  app: 'app/',
  dist: 'dist/',
@@ -61,7 +63,10 @@ gulp.task('browserSync', function() {
 
 gulp.task('default', function(callback) {
   runSequence('clean',
-    ['watch','dist', 'browserify'],
+    ['watch',
+      'dist',
+      //'browserify'
+    ],
     callback);
 });
 
@@ -82,6 +87,11 @@ gulp.task('browserify', function () {
    .pipe(gulp.dest('./dist/js/'));
 });
 
+gulp.task('useref',function() {
+  return gulp.src('./www/*.html')
+  .pipe(useref())
+  .pipe(gulp.dest('dist'));
+});
 
 
 gulp.task('dist', function(){
@@ -98,8 +108,12 @@ gulp.task('dist', function(){
   // gulp.src('./www/scss/**/*.scss')
   // .pipe(gulp.dest('./dist/scss/'));
 
-  gulp.src('./www/*.html')
+  return gulp.src('./www/*.html')
+  .pipe(useref())
   .pipe(gulp.dest('./dist/'));
+
+  // gulp.src('./www/*.html')
+  // .pipe(gulp.dest('./dist/'));
 
 });
 
