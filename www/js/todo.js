@@ -1,12 +1,3 @@
-var config = {
-  apiKey: "AIzaSyBmIEBiDYo9lv-r6ADnEw-8wIlnC_LlUY4",
-  authDomain: "testawendell.firebaseapp.com",
-  databaseURL: "https://testawendell.firebaseio.com",
-  storageBucket: "testawendell.appspot.com",
-};
-firebase.initializeApp(config);
-
-var todosRef = firebase.database().ref('todos');
 todos = (state, action) => {
 
   var state = (typeof state !== 'undefined' ? state : [])
@@ -47,13 +38,6 @@ store = (reducer) => {
 
   return {getState, dispatch, subscribe}
 }
-
-todoStore.subscribe( () => {
-  list.innerHTML = ''
-  todoStore.getState().map( (e, i) => {
-    var item = document.createElement('li')
-    item.innerHTML = e
-    item.addEventListener('click', () => todoStore.dispatch({type: 'toggleDone', index: i}))
-    list.appendChild(item)
-  })
-})
+exports.store = store
+exports.todos = todos
+exports.todoStore = store(todos)
