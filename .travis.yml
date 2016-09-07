@@ -5,7 +5,7 @@ script:
   - gulp test 
   - gulp
 after_success:
-  - firebase deploy --token ${FIREBASE_TOKEN} 
+  - firebase deploy --token "${FIREBASE_TOKEN}" 
 language: node_js
 node_js:
   - "6"
