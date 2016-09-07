@@ -13,6 +13,8 @@ var clean = require('gulp-clean');
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
 
+var runSequence = require('run-sequence');
+
 var bases = {
  app: 'app/',
  dist: 'dist/',
@@ -54,7 +56,14 @@ gulp.task('browserSync', function() {
     }
   });
 });
-gulp.task('default', ['clean','dist', 'browserify']);
+//gulp.task('default', ['clean','dist', 'browserify']);
+
+
+gulp.task('default', function(callback) {
+  runSequence('clean',
+    ['dist', 'browserify'],
+    callback);
+});
 
 
 

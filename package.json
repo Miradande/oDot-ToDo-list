@@ -24,6 +24,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-tape": "0.0.9",
     "gulp-uglify": "^2.0.0",
+    "run-sequence": "^1.2.2",
     "tap-colorize": "^1.2.0",
     "tape": "^4.6.0"
   },
