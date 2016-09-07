@@ -64,8 +64,25 @@ gulp.task('clean', [], function() {
 
 
 gulp.task('dist', function(){
-  gulp.src('./www/*')
+
+
+
+
+  gulp.src('./www/css/**/*.css')
+  .pipe(gulp.dest('./dist/css/'));
+
+  gulp.src('./www/images/**/*.jpg')
+  .pipe(gulp.dest('./dist/images/'));
+
+  gulp.src('./www/js/**/*.js')
+  .pipe(gulp.dest('./dist/js/'));
+
+  gulp.src('./www/scss/**/*.scss')
+  .pipe(gulp.dest('./dist/scss/'));
+
+  gulp.src('./www/**/*.html')
   .pipe(gulp.dest('./dist/'));
+
 });
 
 
