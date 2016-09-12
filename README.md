@@ -12,7 +12,9 @@ Basic To-Do list (Web based CRUD app)
 ##The Crew
 
 Anders: https://github.com/oakis
+
 Adam: https://github.com/AdamWendell
+
 Mirsad: https://github.com/CyrusZei
 
 ##Tools
