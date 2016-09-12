@@ -1,3 +1,4 @@
+// En reducer som uppdaterar state beroende på vilken action som passas in.
 todos = (state, action) => {
 
   var state = (typeof state !== 'undefined' ? state : [])
@@ -15,18 +16,18 @@ todos = (state, action) => {
       return state
   }
 }
-
+// Store som lagrar all state och exponerar funktioner.
 store = (reducer) => {
   var state
   var listeners = []
-
+  // getState är en funktion som returnar nuvarande state
   const getState = () => state
-
+  // dispatch är en funktion som tar emot en action och callar reducern. Callar även alla listeners.
   const dispatch = (action) => {
     state = reducer(state, action)
     listeners.forEach(listener => listener())
   }
-
+  // subscribe lägger till en listener och returnar en funktion för att ta bort listernern.
   const subscribe = (listener) => {
     listeners.push(listener)
     return () => {
