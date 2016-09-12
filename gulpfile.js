@@ -17,6 +17,12 @@ var runSequence = require('run-sequence');
 
 var useref = require('gulp-useref');
 
+
+
+// commands       what does it do
+// gulp
+
+
 var bases = {
  app: 'app/',
  dist: 'dist/',
