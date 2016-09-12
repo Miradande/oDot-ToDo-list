@@ -33,6 +33,14 @@ $ npm install
 ![alt text](https://img.stackshare.io/service/844/iruTC031.png "Logo Title Text 1")
 
 Gulp is a automation tools. We used it to get the rive reload effect and so that it will compile our scss to css on the fly
+
+#### Travis CI
+
+Travis ci is a continuos integration tool. That checks pullrequests and builds the app. It can also deploy too live server. 
+
+#### Tape.js
+
+Tape is a testing tool that comes batteries included. So you only require in tape in your tests and it comes with a assertion library.  
 ### Installation
 
 
