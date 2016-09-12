@@ -9,11 +9,17 @@ Test a few tools for JavaScript development.
 
 Basic To-Do list (Web based CRUD app)
 
+##The Crew
+
+Anders: https://github.com/oakis
+Adam: https://github.com/AdamWendell
+Mirsad: https://github.com/CyrusZei
+
 ##Tools
 
 | Tool          | Used for        | Assigned to |
 | ------------- |:----------------| -----------:|
-| Git           | Version Control | Anders      |
+| Git           | Version Control | *           |
 | Firebase      | Backend					| Anders			|
 | Gulp					| Task Runner			| Mirsad			|
 | Travis CI 		| CI, Deployment  | Adam				|
@@ -40,7 +46,13 @@ Travis ci is a continuos integration tool. That checks pullrequests and builds t
 
 #### Tape.js
 
-Tape is a testing tool that comes batteries included. So you only require in tape in your tests and it comes with a assertion library.  
+Tape is a testing tool that comes batteries included. So you only require in tape in your tests and it comes with a assertion library.
+
+
+### Firebase
+
+Firebase is a cloud service provider with easy to setup backend functions. Ex. Login, Social media login, realtime database and hosting.
+
 ### Installation
 
 
