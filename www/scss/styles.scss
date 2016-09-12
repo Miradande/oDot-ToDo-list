@@ -1,6 +1,7 @@
 
 body {
-  background-color: #FFFFFF;
+  background-color: #4CAF50;
+  color: #fff;
 }
 
 p {
@@ -9,4 +10,11 @@ p {
 
 .hidden {
 	display: none;
+}
+
+li {
+  background-color: #FFEB3B;
+    width: 160px;
+    border-radius: 5px;
+    padding: 10px;
 }
