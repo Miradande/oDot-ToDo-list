@@ -44,3 +44,7 @@ $ Gulp watch
 ```sh
 $ Gulp
 ```
+
+### Contribute
+
+Look at issues first. They explain what features we have on the roadmap. If there are no open issues and you got an idea for a feature. Please feel free too open a issue before you start working on it.
