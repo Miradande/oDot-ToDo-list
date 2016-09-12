@@ -51,7 +51,7 @@ Travis ci is a continuos integration tool. That checks pullrequests and builds t
 Tape is a testing tool that comes batteries included. So you only require in tape in your tests and it comes with a assertion library.
 
 
-### Firebase
+#### Firebase
 
 Firebase is a cloud service provider with easy to setup backend functions. Ex. Login, Social media login, realtime database and hosting.
 
