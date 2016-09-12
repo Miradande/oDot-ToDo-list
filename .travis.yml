@@ -1,6 +1,12 @@
 before_script:
+  - echo ${FIREBASE_TOKEN}
   - npm install;
-script: gulp test 
+  - npm i -g firebase-tools
+script:
+  - gulp test 
+  - gulp
+after_success:
+  - firebase deploy --token="${FIREBASE_TOKEN}"
 language: node_js
 node_js:
   - "6"
