@@ -5,7 +5,7 @@ console.log(store.dispatch)
 
 test('Adding ToDos', function (t) {
   t.deepEqual(todos([], {type: 'addTodo', todo: 'Äta frukost'}), ['Äta frukost'])
-  t.deepEqual(todos(['Äta frukost'], {type: 'addTodo', todo: 'Äta lunch'}), ['Äta frukost', 'Äta lunch'])
+  t.deepEqual(todos(['Äta frukost'], {type: 'addTodo', todo: 'Äta luncha'}), ['Äta frukost', 'Äta lunch'])
   t.end()
 })
 
